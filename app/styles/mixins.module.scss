@@ -1,0 +1,24 @@
+@import './variables.module.scss';
+
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin emptySection($mobile-height, $desktop-height){
+    width: 100%;
+    @include flexCenter;
+    height: $mobile-height;
+    @media (min-width: $breakpoint-desktop) {
+        height: $desktop-height;
+        border-bottom: 1px solid 
+        rgba(0, 0, 0, 0.05);
+    }
+}
