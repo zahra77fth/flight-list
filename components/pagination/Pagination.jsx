@@ -37,7 +37,7 @@ const Pagination = ({ activePage, setActivePage, totalPages }) => {
             <button
                 onClick={() => setActivePage(activePage - 1)}
                 disabled={activePage === 1}
-                className="border rounded-md bg-white cursor-pointer mx-1 px-3 py-2 text-base disabled:cursor-not-allowed disabled:opacity-50"
+                className="rounded-md bg-white cursor-pointer mx-1 px-3 py-2 text-base disabled:cursor-not-allowed disabled:opacity-50"
             >
                 &lt;
             </button>
@@ -45,8 +45,8 @@ const Pagination = ({ activePage, setActivePage, totalPages }) => {
                 <button
                     key={index}
                     onClick={() => number !== '...' && setActivePage(number)}
-                    className={`border rounded-md cursor-pointer mx-1 px-3 py-2 text-base ${
-                        number === activePage ? 'bg-blue-500 text-white font-bold' : 'bg-white'
+                    className={`rounded-md cursor-pointer mx-1 px-3 py-2 text-base ${
+                        number === activePage ? 'bg-blue text-white font-bold' : 'bg-white'
                     }`}
                 >
                     {number}

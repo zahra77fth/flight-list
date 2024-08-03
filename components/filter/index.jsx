@@ -7,8 +7,8 @@ import {
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const Filter = ({ filters, onFilterChange }) => {
-    const [isAirlinesOpen, setIsAirlinesOpen] = useState(true);
-    const [isFlightKindsOpen, setIsFlightKindsOpen] = useState(true);
+    const [isAirlinesOpen, setIsAirlinesOpen] = useState(false);
+    const [isFlightKindsOpen, setIsFlightKindsOpen] = useState(false);
 
     const handleFilterChange = (e, value, filterType) => {
         const updatedFilters = e.target.checked
@@ -16,7 +16,6 @@ const Filter = ({ filters, onFilterChange }) => {
             : filters[filterType].filter(item => item !== value);
 
         onFilterChange(filterType, updatedFilters);
-        console.log(e, value);
     };
 
     const flightsKindFilterContent = [
@@ -25,7 +24,7 @@ const Filter = ({ filters, onFilterChange }) => {
     ];
 
     return (
-        <div className='mx-4 bg-white min-w-[250px]'>
+        <div className='md:mx-4 mb-3 bg-white min-w-ful md:min-w-[250px]'>
             <div className="p-4 border-b border-[#eee]">
                 <h3 className="text-lg font-bold">فیلتر ها</h3>
             </div>
@@ -69,7 +68,7 @@ const Filter = ({ filters, onFilterChange }) => {
                     </div>
                 )}
                 <div className="flex items-center border-t pt-4 border-[#eee] justify-between cursor-pointer pr-4 mt-4" onClick={() => setIsFlightKindsOpen(!isFlightKindsOpen)}>
-                    <Typography className='mr-2 font-bold'>
+                    <Typography className='mr-2 mb-2 font-bold'>
                         نوع پرواز
                     </Typography>
                     {isFlightKindsOpen ? (

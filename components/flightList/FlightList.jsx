@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import FlightItem from "../flightItem/FlightItem";
 import Pagination from "../pagination/Pagination";
-import Filter from "../filter/index";
+import Filter from "../filter";
 import SortDropdown from "../sort/index";
 
 const FlightList = ({ flightData }) => {
@@ -14,7 +14,6 @@ const FlightList = ({ flightData }) => {
 
     const handleSortChange = (sortBy) => {
         setSort(sortBy);
-        console.log(sortBy)
         setCurrentPage(1);
     };
 
@@ -54,7 +53,7 @@ const FlightList = ({ flightData }) => {
             <div className="flex justify-end w-full">
             <SortDropdown onSortChange={handleSortChange} />
             </div>
-            <div className="flex">
+            <div className="flex flex-col w-full md:max-w-[1000px] md:flex-row">
                 <Filter filters={filters} onFilterChange={handleFilterChange} />
                 <div>
                     {currentFlights.map((flightDataItem, index) => (

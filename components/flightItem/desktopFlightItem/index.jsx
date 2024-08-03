@@ -19,7 +19,6 @@ const DesktopFlightItem = ({flightData}) => {
         } else if (["F", "A"].includes(classType)) {
             return "فرست کلاس";
         }
-        console.log(classType)
         return "ناشناخته";
     };
 
@@ -239,36 +238,36 @@ const DesktopFlightItem = ({flightData}) => {
                                             <div className="ml-5">
                                                 <div className="flex items-center mb-2">
                                                     <div
-                                                        className="w-[72px]"
+                                                        className="w-[72px] text-secondary-gray ml-2"
                                                     >
                                                         مدت پرواز
                                                     </div>
                                                     <div
-                                                        className="text-[12px] text-secondary-gray"
+                                                        className="text-[12px]"
                                                     >
                                                         {`${Math.floor(flightData.totalDuration / 60)} ساعت و ${flightData.totalDuration % 60} دقیقه`}
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center mb-2">
                                                     <div
-                                                        className="w-[72px] text-detail"
+                                                        className="w-[72px] text-secondary-gray ml-2"
                                                     >
                                                         نوع هواپیما
                                                     </div>
                                                     <div
-                                                        className="text-[12px] text-secondary-gray"
+                                                        className="text-[12px]"
                                                     >
                                                         Airbus A320
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center mb-2">
                                                     <div
-                                                        className="w-[72px] text-detail"
+                                                        className="w-[72px] text-secondary-gray ml-2"
                                                     >
                                                         کلاس پرواز
                                                     </div>
                                                     <div
-                                                        className="text-[12px] text-secondary-gray"
+                                                        className="text-[12px]"
                                                     >
                                                         اکونومی
                                                     </div>
@@ -277,36 +276,36 @@ const DesktopFlightItem = ({flightData}) => {
                                             <div className="ml-5">
                                                 <div className="flex items-center mb-2">
                                                     <div
-                                                        className="w-[72px] text-detail"
+                                                        className="w-[72px] text-secondary-gray ml-2"
                                                     >
                                                         نوع پرواز
                                                     </div>
                                                     <div
-                                                        className="text-[12px] text-secondary-gray"
+                                                        className="text-[12px]"
                                                     >
                                                         سیستمی
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center mb-2">
                                                     <div
-                                                        className="w-[72px] text-detail"
+                                                        className="w-[72px] text-secondary-gray ml-2"
                                                     >
                                                         بار مجاز
                                                     </div>
                                                     <div
-                                                        className="text-[12px] text-secondary-gray"
+                                                        className="text-[12px]"
                                                     >
                                                         {flightData.baggage}
                                                     </div>
                                                 </div>
                                                 <div className="flex mb-2 items-center">
                                                     <div
-                                                        className="w-[72px] text-detail"
+                                                        className="w-[72px] text-secondary-gray text-nowrap ml-2"
                                                     >
                                                         کلاس نرخی
                                                     </div>
                                                     <div
-                                                        className="text-[12px] text-secondary-gray"
+                                                        className="text-[12px]"
                                                     >
                                                         { getClassType(flightData.className) } {flightData.className}
                                                     </div>
@@ -314,14 +313,11 @@ const DesktopFlightItem = ({flightData}) => {
                                             </div>
                                             <div className="flex">
                                                 <div
-                                                    className="w-[72px] text-detail"
+                                                    className="w-[72px] text-secondary-gray"
                                                 >
                                                     استرداد
                                                 </div>
-                                                <div
-                                                    className="text-[12px] text-secondary-gray"
-                                                    style={{ color: "#ff1d23" }}
-                                                >
+                                                <div className="text-[12px] text-red">
                                                     غیر قابل استرداد
                                                 </div>
                                             </div>
@@ -421,7 +417,7 @@ const DesktopFlightItem = ({flightData}) => {
                             </div>
                             <div className="flex justify-between items-center ml-2">
                                 <div
-                                    className="text-[14px] text-blue font-bold ml-2"
+                                    className="text-[14px] text-blue font-bold mx-2"
                                 >
                                     <div>مجموع:</div>
                                 </div>
