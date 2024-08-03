@@ -1,4 +1,3 @@
-// lib/fetchFlightData.js
 import { promises as fs } from 'fs';
 import path from 'path';
 
@@ -22,7 +21,7 @@ export async function fetchFlightData() {
             departureTime: itinerary.originDestinationOptions[0].flightSegments[0].departureDateTime,
             departureAirport: itinerary.originDestinationOptions[0].flightSegments[0].departureAirportLocationCode,
             arrivalCity: airportData.find(airport => airport.iata === itinerary?.originDestinationOptions[0]?.flightSegments?.at(-1)?.arrivalAirportLocationCode)?.cityFa || 'Unknown',
-            arrivalTime: itinerary.originDestinationOptions[0]?.flightSegments?.at(-1)?.arrivalDateTime, // Fixed field name
+            arrivalTime: itinerary.originDestinationOptions[0]?.flightSegments?.at(-1)?.arrivalDateTime,
             arrivalAirport: itinerary?.originDestinationOptions[0]?.flightSegments?.at(-1)?.arrivalAirportLocationCode,
             arrivalAirportName: airportData.find(airport => airport.iata === itinerary.originDestinationOptions[0].flightSegments[0].departureAirportLocationCode)?.name || 'Unknown',
             departureAirportName: airportData.find(airport => airport.iata === itinerary.originDestinationOptions[0].flightSegments[0].departureAirportLocationCode)?.name || 'Unknown',

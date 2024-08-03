@@ -1,4 +1,3 @@
-// app/page.js
 import { fetchFlightData } from './api/fetchData';
 import FlightList from '../components/flightList/FlightList';
 

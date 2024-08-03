@@ -1,4 +1,3 @@
-// app/api/flights/route.js
 import { fetchFlightData } from './fetchData';
 
 export async function GET(request) {
