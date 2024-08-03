@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import variables from "../../../app/styles/variables.module.scss";
 import { useState } from "react";
 import moment from 'jalali-moment'
 import { IoMdClose } from "react-icons/io";
@@ -12,7 +11,7 @@ const MobileFlightItem = ({ flightData }) => {
     const [isFlightDetailsVisible, setIsFlightDetailsVisible] = useState(false);
     return (
         <div className="">
-            <div className="block w-full h-[270px] bg-white p-[13px_16px_16px_16px] md:hidden">
+            <div className="block w-full h-[270px] bg-white p-[13px_16px_16px_16px] mb-4 md:hidden">
                 <div className="flex items-center mb-[18px]">
                     <Image
                         src="/images/IranAir.png"
@@ -30,22 +29,20 @@ const MobileFlightItem = ({ flightData }) => {
                     </div>
                     <div className="flex flex-col items-center self-baseline">
                         <div className="text-[12px] text-[#6f6f6f] mb-[3px] px-[6px]">
-                          few
+                            few
                         </div>
-                        <div className="flex items-center w-full">
-                            <div
-                                className="w-[12px] h-[12px] box-border rounded-full border border-black"
-                                style={{borderColor: variables.blue}}
-                            ></div>
-                            <div className="w-full h-[1px] box-border border-b border-Gray30"></div>
-                            <div
-                                className="w-[12px] h-[12px] box-border rounded-full border border-black"
-                                style={{borderColor: variables.pumpkinOrange}}
-                            ></div>
+                        <div className="flex flex-col items-center justify-center">
+                            <p className="text-center">{`${Math.floor(flightData.totalDuration / 60)} ساعت و ${flightData.totalDuration % 60} دقیقه`}</p>
+                            <div className="flex items-center justify-center mb-2 md:mb-10">
+                                <div className="rounded-full border border-blue-600 h-3 w-3 flex items-center"/>
+                                <div className="border border-b-2 min-w-20"/>
+                                <div
+                                    className="rounded-full border border-orange h-3 w-3 flex items-center"/>
+                            </div>
                         </div>
                     </div>
                     <div className="text-[24px] text-greyish-brown">
-                       efw
+                        efw
                     </div>
                 </div>
                 <div className="w-full flex justify-between">
@@ -53,15 +50,15 @@ const MobileFlightItem = ({ flightData }) => {
                         <div className="text-[14px] text-greyish-brown">
                             few
                         </div>
-                        <div className="text-[12px] text-details-gray mr-[7px]">
+                        <div className="text-[12px] text-secondary-gray mr-[7px]">
                             wef
                         </div>
                     </div>
                     <div className="flex items-center">
                         <div className="text-[14px] text-greyish-brown">
-                           wef
+                            wef
                         </div>
-                        <div className="text-[12px] text-details-gray mr-[7px]">
+                        <div className="text-[12px] text-secondary-gray mr-[7px]">
                            wef
                         </div>
                     </div>
@@ -92,12 +89,12 @@ const MobileFlightItem = ({ flightData }) => {
                 </div>
                 <div className="flex justify-between items-end">
                     <div>
-                        <div className="text-[12px] text-details-gray">یک نفر</div>
+                        <div className="text-[12px] text-secondary-gray">یک نفر</div>
                         <div className="flex items-center pt-1">
                             <div className="text-[12px] text-blue text-[20] ml-3">
                                few
                             </div>
-                            <div className="text-[12px] text-details-gray">تومان</div>
+                            <div className="text-[12px] text-secondary-gray">تومان</div>
                         </div>
                     </div>
                     <div
@@ -120,12 +117,12 @@ const MobileFlightItem = ({ flightData }) => {
                             <div
                                 className="flex border-b border-[#eee]">
                                 <div
-                                    className="h-[40px] text-[14px] text-details-gray flex items-center justify-center rounded-tl-[4px] rounded-tr-[4px] px-[12px] ml-[8px] cursor-pointer"
+                                    className="h-[40px] text-[14px] text-secondary-gray flex items-center justify-center rounded-tl-[4px] rounded-tr-[4px] px-[12px] ml-[8px] cursor-pointer"
                                 >
                                     <PiAirplaneTakeoffLight/>
                                     <div className="pr-2">جزئیات پرواز</div>
                                 </div>
-                                <div className="h-[40px] text-[14px] text-details-gray flex items-center justify-center rounded-tl-[4px] rounded-tr-[4px] px-[12px] ml-[8px] cursor-pointer">
+                                <div className="h-[40px] text-[14px] text-secondary-gray flex items-center justify-center rounded-tl-[4px] rounded-tr-[4px] px-[12px] ml-[8px] cursor-pointer">
                                     <GrDocumentVerified/>
                                     <div className="pr-2">قوانین و شرایط</div>
                                 </div>
@@ -163,7 +160,7 @@ const MobileFlightItem = ({ flightData }) => {
                                             className="w-[8px] h-[8px] rounded-full border border-red"
                                         ></div>
                                         <div
-                                            className="h-[316px] my-[2px_0] w-[2px] box-border border-[2px] border-dotted border-Gray30"
+                                            className="h-[316px] my-[2px_0] w-[2px] box-border border-[2px] border-dotted border-gray"
                                         ></div>
                                         <div
                                             className="w-[8px] h-[8px] rounded-full border border-red"
@@ -414,12 +411,12 @@ const MobileFlightItem = ({ flightData }) => {
                         <div className="h-[72px] w-full shadow-[0_-5px_8px_0_rgba(0,0,0,0.08)] p-[16px]">
                             <div className="flex justify-between items-center">
                                 <div>
-                                    <div className="text-[12px] text-details-gray">یک نفر</div>
+                                    <div className="text-[12px] text-secondary-gray">یک نفر</div>
                                     <div className="flex items-center">
                                         <div className="text-[12px] text-blue text-[20] ml-3">
                                           ew
                                         </div>
-                                        <div className="text-[12px] text-details-gray">تومان</div>
+                                        <div className="text-[12px] text-secondary-gray">تومان</div>
                                     </div>
                                 </div>
                                 <div

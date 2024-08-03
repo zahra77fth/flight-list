@@ -24,9 +24,13 @@ export async function fetchFlightData() {
             arrivalCity: airportData.find(airport => airport.iata === itinerary?.originDestinationOptions[0]?.flightSegments?.at(-1)?.arrivalAirportLocationCode)?.cityFa || 'Unknown',
             arrivalTime: itinerary.originDestinationOptions[0]?.flightSegments?.at(-1)?.arrivalDateTime, // Fixed field name
             arrivalAirport: itinerary?.originDestinationOptions[0]?.flightSegments?.at(-1)?.arrivalAirportLocationCode,
+            arrivalAirportName: airportData.find(airport => airport.iata === itinerary.originDestinationOptions[0].flightSegments[0].departureAirportLocationCode)?.name || 'Unknown',
+            departureAirportName: airportData.find(airport => airport.iata === itinerary.originDestinationOptions[0].flightSegments[0].departureAirportLocationCode)?.name || 'Unknown',
             departureCity: airportData.find(airport => airport.iata === itinerary.originDestinationOptions[0].flightSegments[0].departureAirportLocationCode)?.cityFa || 'Unknown',
             totalDuration: itinerary.originDestinationOptions[0].journeyDurationPerMinute,
             flightSegments: itinerary.originDestinationOptions[0].flightSegments,
+            baggage: itinerary.originDestinationOptions[0].flightSegments.baggage || '0 کیلوگرم',
+            className: itinerary.originDestinationOptions[0].flightSegments.cabinClassCode,
         }));
 
         return {
