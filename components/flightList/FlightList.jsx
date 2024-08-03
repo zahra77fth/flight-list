@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import {useState, useEffect, Suspense} from "react";
 import FlightItem from "../flightItem/FlightItem";
 import Pagination from "../pagination/Pagination";
 import Filter from "../filter";
@@ -50,11 +50,13 @@ const FlightList = ({ flightData }) => {
 
     return (
         <>
-            <div className="flex justify-end w-full">
+            <div className="flex justify-end max-w-[1000px] w-full">
             <SortDropdown onSortChange={handleSortChange} />
             </div>
             <div className="flex flex-col w-full md:max-w-[1000px] md:flex-row">
-                <Filter filters={filters} onFilterChange={handleFilterChange} />
+                <Suspense fallback={<p>Loading Airlines...</p>}>
+                    <Filter filters={filters} onFilterChange={handleFilterChange} />
+                </Suspense>
                 <div>
                     {currentFlights.map((flightDataItem, index) => (
                         <FlightItem key={index} flightData={flightDataItem} />
